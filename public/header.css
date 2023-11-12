@@ -1,0 +1,32 @@
+/* HeaderComp */
+#app > header{
+    width:920px;
+    height:201px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, #FFF 69.27%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+#app > header .contentBlock{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app > header .titleSection{
+    width:fit-content;
+    font-family: 'Inter-Bold';
+    font-size: 100px;
+    line-height: 121.02px;
+    text-transform: uppercase;
+}
+
+#app > header .headerTime{
+    font-family: 'Inter-Bold';
+    font-size: 60px;
+    text-transform: uppercase;
+    width:fit-content;
+}
