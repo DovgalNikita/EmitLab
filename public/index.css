@@ -1,3 +1,28 @@
+/* imports */
+@import url('./header.css');
+@import url('./mainComp.css');
+@import url('./footer.css');
+
+:root{
+    --whiteColor:#FFF;
+    --blue:#214B77;
+}
+
+/* assets */
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../src/assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('../src/assets/fonts/Inter-Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter-Bold';
+    src: local('Inter-Bold'), url('../src/assets/fonts/Inter-Bold.woff') format('woff');
+}
+
+/* globalSettings */
 *{
     padding:0;
     margin:0;
@@ -11,9 +36,35 @@ html{
 body{
     width:100%;
     height:100%;
+}
+
+
+#app{
+    width:100%;
+    height:100%;
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items:center;
-    background-color: red;
 }
+/* VerticaLine */
+#app .verticalLine{
+    position: absolute;
+    width:920px;
+    min-height:1920px;
+    height:100%;
+}
+#app .verticalLine > div{
+    width:4px;
+    height:100%;
+    background-color: #C1C1C1;
+    position: absolute;
+    left:-58px;
+}
+
+
+
+
+
+
+

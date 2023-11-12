@@ -3,5 +3,8 @@
 </script>
 
 <template>
-  <div></div>
+    <VerticalLine/>
+    <HeaderComp />
+    <MainComp />
+    <FooterComp />
 </template>
