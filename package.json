@@ -42,7 +42,12 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "indent":["warn",4],
+      "no-console":"warn",
+      "eol-last": 0,
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }]
+    }
   },
   "browserslist": [
     "> 1%",
