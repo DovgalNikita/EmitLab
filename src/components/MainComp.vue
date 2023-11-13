@@ -4,7 +4,7 @@
 
 <template>
     <main class="mainComp">
-       <ReportBlock />
-       <ReportBlock />
+        <ReportBlock />
+        <ReportBlock />
     </main>
 </template>

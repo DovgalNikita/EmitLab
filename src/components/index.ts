@@ -7,6 +7,7 @@ import ReportBlock from './ReportBlock.vue'
 import ProgressBarComp from './ProgressBarComp.vue'
 import AuthorsBlock from './AuthorsBlock.vue'
 import VerticalLine from './VerticalLine.vue'
+import FetchData from './FetchData.vue'
 
 const compList: ICompList[] = [
     { name: 'HeaderComp', component: HeaderComp },
@@ -15,7 +16,8 @@ const compList: ICompList[] = [
     { name: 'ReportBlock', component: ReportBlock },
     { name: 'ProgressBarComp', component: ProgressBarComp },
     { name: 'AuthorsBlock', component: AuthorsBlock },
-    { name: 'VerticalLine', component: VerticalLine }
+    { name: 'VerticalLine', component: VerticalLine },
+    { name: 'FetchData', component: FetchData }
 
 ]
 

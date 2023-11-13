@@ -1,14 +1,16 @@
 /* FooterComp */
-#app > footer{
+#app footer{
+    position: relative;
     width:1080px;
     height:210px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 16.15%);
+    z-index:1;
 }
 
-#app > footer .contentBlock{
+#app footer .contentBlock{
     width:920px;
     height:100%;
     display: flex;
@@ -16,12 +18,12 @@
     align-items: center;
 }
 
-#app > footer .captioningImg{
+#app footer .captioningImg{
     display: flex;
     align-items: center;
 }
 
-#app > footer .captioningImg>div{
+#app footer .captioningImg>div{
     font-size: 20px;
     margin:29px 0 29px 20px;
     text-transform: uppercase;

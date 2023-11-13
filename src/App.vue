@@ -3,8 +3,11 @@
 </script>
 
 <template>
-    <VerticalLine/>
-    <HeaderComp />
-    <MainComp />
-    <FooterComp />
+    <div class="observerComponent">
+        <VerticalLine />
+        <HeaderComp />
+        <MainComp />
+        <FooterComp />
+        <FetchData/>
+    </div>
 </template>
