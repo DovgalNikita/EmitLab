@@ -1,0 +1,54 @@
+/* assets */
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../src/assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('../src/assets/fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter-Bold';
+    src: local('Inter-Bold'), url('../src/assets/fonts/Inter-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* HeaderComp */
+#app header{
+    position: relative;
+    width:1080px;
+    height:201px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #FFF 69.27%, rgba(255, 255, 255, 0.00) 100%);
+    z-index:1;
+}
+
+#app header .contentBlock{
+    width:920px;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app header .titleSection{
+    width:fit-content;
+    font-family: 'Arial, sans-serif';
+    font-size: 100px;
+    line-height: 121.02px;
+    text-transform: uppercase;
+}
+
+#app header .headerTime{
+    font-family: 'Inter-Bold';
+    font-size: 60px;
+    text-transform: uppercase;
+    width:fit-content;
+}

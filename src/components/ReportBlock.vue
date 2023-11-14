@@ -1,5 +1,25 @@
 <script setup lang="ts">
-    const bool = true
+import { computed, ref, defineProps } from 'vue'
+import { timeHandler, formatTime } from '../utils/timeHandler'
+const bool = true
+
+defineProps({
+    data: {
+        type: Object,
+        default: () => ({
+            id: 0,
+            event: '',
+            startEventTime: '',
+            durationEvent: '',
+            speakers: '',
+            speakerPhotos: '',
+            typeEvent: '',
+            language: '',
+            titleEvent: '',
+            isReport: ''
+        })
+    }
+})
 </script>
 
 <template>
@@ -13,20 +33,20 @@
             <div class="content">
 
                 <div class="timeRow">
-                    <div class="timeRange">13:00-13:40</div>
+                    <div class="timeRange">{{data.startEventTime+'-'+formatTime(timeHandler(data.startEventTime)+data.durationEvent)}}</div>
                     <div class="timeLeft"><div>осталось 16 мин</div></div>
                 </div>
 
                 <AuthorsBlock />
 
                 <div class="themeTitle">
-                    Достучаться до небес: как выстроить эффективное взаимодействие с «непростым» заказчиком
+                    {{data.event}}
                 </div>
 
                 <div class="footerAnnotation">
-                    <div>секц.доклад</div>
-                    <div>рус</div>
-                    <div>Hr, развитие карьеры и профессиональный рост</div>
+                    <div>{{data.typeEvent}}</div>
+                    <div>{{data.language}}</div>
+                    <div>{{data.titleEvent}}</div>
                 </div>
             </div>
         </div>

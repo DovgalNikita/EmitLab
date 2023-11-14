@@ -1,0 +1,67 @@
+#app .mainComp .breakTimeBlock{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:920px;
+    color:var(--grey);
+    margin:30px 0;
+    border-radius: 24px;
+    border: 3px solid #C1C1C1;
+}
+
+#app .breakTimeBlock .relation{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left:-50px;
+    top:calc(50% - 10px);
+}
+#app .breakTimeBlock .relation .circle{
+    position: relative;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color: var(--greyBackground);
+}
+#app .breakTimeBlock .relation .circle::before{
+    position: absolute;
+    content:'';
+    width:10px;
+    height:10px;
+    border-radius: 5px;
+    background: var(--whiteColor);
+    left:calc(50% - 5px);
+    top:calc(50% - 5px);
+}
+#app .breakTimeBlock .relation .line{
+    width:30px;
+    height:3px;
+    background-color: var(--greyBackground);
+}
+
+
+#app .breakTimeBlock .contentBlock{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    padding:20px 0;
+}
+#app .breakTimeBlock .contentBlock .content{
+    width:860px;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 60px;
+}
+#app .breakTimeBlock .contentBlock .timeRange{
+    font-size: 60px;
+}
+#app .breakTimeBlock .contentBlock .caption{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 46px;
+}

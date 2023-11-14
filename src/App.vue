@@ -8,6 +8,5 @@
         <HeaderComp />
         <MainComp />
         <FooterComp />
-        <FetchData/>
     </div>
 </template>
