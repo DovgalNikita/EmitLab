@@ -1,13 +1,13 @@
 /* FooterComp */
 #app footer{
-    position: relative;
+    position: absolute;
     width:1080px;
     height:210px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 16.15%);
-    z-index:1;
+    bottom:0;
 }
 
 #app footer .contentBlock{

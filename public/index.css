@@ -3,10 +3,14 @@
 @import url('./mainComp.css');
 @import url('./footer.css');
 @import url('./verticalLine.css');
+@import url('./breakTimeBlock.css');
+@import url('./reportBlock.css');
 
 :root{
     --whiteColor:#FFF;
     --blue:#214B77;
+    --grey:#5E5E5E;
+    --greyBackground:#C1C1C1;
 }
 
 /* assets */

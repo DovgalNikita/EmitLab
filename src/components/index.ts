@@ -8,6 +8,7 @@ import ProgressBarComp from './ProgressBarComp.vue'
 import AuthorsBlock from './AuthorsBlock.vue'
 import VerticalLine from './VerticalLine.vue'
 import FetchData from './FetchData.vue'
+import BreakTimeBlock from './BreakTimeBlock.vue'
 
 const compList: ICompList[] = [
     { name: 'HeaderComp', component: HeaderComp },
@@ -17,7 +18,8 @@ const compList: ICompList[] = [
     { name: 'ProgressBarComp', component: ProgressBarComp },
     { name: 'AuthorsBlock', component: AuthorsBlock },
     { name: 'VerticalLine', component: VerticalLine },
-    { name: 'FetchData', component: FetchData }
+    { name: 'FetchData', component: FetchData },
+    { name: 'BreakTimeBlock', component: BreakTimeBlock }
 
 ]
 

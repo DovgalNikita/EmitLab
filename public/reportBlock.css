@@ -1,0 +1,164 @@
+/* 1ReportComp reportBlock*/
+#app .mainComp .reportBlock{
+    position: relative;
+    height:fit-content;
+    margin:30px 0;
+}
+#app .mainComp .reportBlock:nth-child(1){
+    margin:0 0 30px;
+}
+
+#app .reportBlock .relation{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    left:-50px;
+    top:48px;
+}
+#app .reportBlock .relation .circle{
+    position: relative;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color: #A6D447;
+}
+#app .reportBlock .relation .circle::before{
+    position: absolute;
+    content:'';
+    width:10px;
+    height:10px;
+    border-radius: 5px;
+    background: var(--whiteColor);
+    left:calc(50% - 5px);
+    top:calc(50% - 5px);
+}
+#app .reportBlock .relation .line{
+    width:30px;
+    height:3px;
+    background-color: #A6D447;
+}
+
+#app .reportBlock .contentBlock{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width:920px;
+    border-radius: 32px;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+#app .reportBlock .contentBlock.active{
+    background-color: #214B77;
+}
+
+        /* 2ProgressComp progressBarBlock*/
+#app .mainComp .progressBarBlock{
+    width:100%;
+    height:20px;
+}
+#app .mainComp .progressBarBlock progress{
+    width:100%;
+    height:100%;
+    border-radius: 150px;
+}
+#app .mainComp .progressBarBlock progress::-webkit-progress-bar{
+    background:#47525A;
+}
+#app .mainComp .progressBarBlock progress::-webkit-progress-value{
+    background: linear-gradient(270deg, #74D447 34.67%, #C6FF52 100%);
+}
+        /* 2Content */
+#app .mainComp .reportBlock .content{
+    width:93%;
+    height:100%;
+    
+}
+            /* 3Content timeRow*/
+#app .mainComp .reportBlock .timeRow{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    height:20px;
+    color:var(--whiteColor);
+    margin-top:36px;
+}
+#app .timeRow .timeRange{
+    font-size: 60px;
+}
+#app .timeRow .timeLeft{
+    height: 100%;
+    width:auto;
+    display: flex;
+    align-items: flex-start;
+    font-size: 24px;
+}
+            /* 3Content authorsRow */
+#app .mainComp .reportBlock .authorsRow{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height:140px;
+    margin-top:4.6%;
+}
+#app .mainComp .reportBlock .authorBlock{
+    display:flex;
+    align-items: center;
+    width:45%;
+}
+#app .mainComp .authorsRow .imgAuthor{
+    width:140px;
+    height:140px;
+    background-color: green;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right:2.4%;
+}
+#app .mainComp .authorsRow .authorData > div{
+    font-size:28px;
+    color:var(--whiteColor);
+}
+#app .mainComp .authorsRow .authorData > div:nth-child(3){
+    font-size:20px;
+}
+
+            /* 3Content themeTitle */
+#app .mainComp .themeTitle{
+    font-size: 48px;
+    color:var(--whiteColor);
+    margin-top:30px;
+}
+
+            /* 3Content footerAnnotation */
+#app .mainComp .footerAnnotation{
+    width: 100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 30px;
+}
+#app .mainComp .footerAnnotation>div{
+    padding:12px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: uppercase;
+    width:fit-content;
+}
+#app .mainComp .footerAnnotation>div:nth-child(1){
+    color:var(--blue);
+    background: #BFF158;
+}
+#app .mainComp .footerAnnotation>div:nth-child(2){
+    color:var(--whiteColor);
+    border:1px solid #BFF158;
+}
+#app .mainComp .footerAnnotation>div:nth-child(3){
+    color:var(--whiteColor);
+    font-size: 17px;
+    border:1px solid #BFF158;
+}
