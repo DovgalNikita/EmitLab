@@ -8,7 +8,6 @@ const props = defineProps({
     }
 })
 
-console.log('ываыва' + props.isReport)
 </script>
 
 <template>

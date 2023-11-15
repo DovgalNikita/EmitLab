@@ -2,36 +2,35 @@
     setup
     lang="ts"
 >
-import { ref, onMounted, onUnmounted } from 'vue'
+import { key } from '@/store'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { useStore } from 'vuex'
+import { updateFormattedDate } from '@/utils/timeHandler'
 
-const formattedDate = ref<string>('')
+const store = useStore(key)
 
-const updateFormattedDate = () => {
-    const date = new Date()
-    const options = {
-        weekday: 'short',
-        hour: '2-digit',
-        minute: '2-digit'
-    }
-    formattedDate.value = date.toLocaleString('ru-RU', options)
-}
+const dayRef = ref(store.state.day)
+const timeRef = ref(store.state.time)
 
 onMounted(() => {
-    updateFormattedDate()
-    setInterval(updateFormattedDate, 30000)
+    const [day, time] = updateFormattedDate()
+    setInterval(() => {
+        const [day, time] = updateFormattedDate()
+        store.state.day = day
+        store.state.time = time
+    }, 30000)
 })
 
 onUnmounted(() => {
     clearInterval(updateFormattedDate)
 })
-
 </script>
 
 <template>
     <header>
        <div class="contentBlock">
             <div class="titleSection">секция а</div>
-            <div class="headerTime">{{ formattedDate }}</div>
+            <div class="headerTime">{{ `${dayRef}, ${timeRef}` }}</div>
        </div>
     </header>
 </template>
