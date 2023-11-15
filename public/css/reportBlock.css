@@ -16,12 +16,19 @@
     left:-50px;
     top:48px;
 }
+#app .reportBlock .relation.breakTime{
+    left:-47px;
+}
+
 #app .reportBlock .relation .circle{
     position: relative;
     width:20px;
     height:20px;
     border-radius:50%;
-    background-color: #A6D447;
+    background-color: var(--greyBackground);
+}
+#app .reportBlock .relation .circle.active{
+    background-color: var(--green);
 }
 #app .reportBlock .relation .circle::before{
     position: absolute;
@@ -36,7 +43,10 @@
 #app .reportBlock .relation .line{
     width:30px;
     height:3px;
-    background-color: #A6D447;
+    background-color: var(--greyBackground);
+}
+#app .reportBlock .relation .line.active{
+    background-color: var(--green);
 }
 
 #app .reportBlock .contentBlock{
@@ -50,9 +60,18 @@
     background-color: #EEEEEE;
     overflow: hidden;
 }
-
 #app .reportBlock .contentBlock.active{
     background-color: #214B77;
+}
+
+#app .reportBlock .contentBlock.breakTime{
+    border: 3px solid var(--greyBackground);
+    border-radius: 32px;
+    background: transparent;
+}
+#app .reportBlock .contentBlock.breakTime.active{
+    background-color: #214B77;
+    border:0;
 }
 
         /* 2ProgressComp progressBarBlock*/
@@ -83,19 +102,51 @@
     align-items: center;
     justify-content: space-between;
     width:100%;
-    height:20px;
+    height:100%;
     color:var(--whiteColor);
     margin-top:36px;
 }
+#app .mainComp .breakTime .timeRow{
+    color:var(--grey);
+}
+#app .mainComp .reportBlock .timeRow.active{
+    margin-top:0;
+    padding:20px 0;
+}
+
 #app .timeRow .timeRange{
+    color:var(--whiteColor);
     font-size: 60px;
 }
+#app .timeRow .timeRange.unactive{
+    color:var(--grey);
+}
+
 #app .timeRow .timeLeft{
-    height: 100%;
-    width:auto;
-    display: flex;
+    display:flex;
+    height: 69px;
+    width:fit-content;
     align-items: flex-start;
     font-size: 24px;
+}
+#app .timeRow .breakTimeTitle{
+    display: block;
+    font-size: 46px;
+    color:var(--grey);
+}
+#app .timeRow .breakTimeTitle.active{
+    color:var(--whiteColor);
+}
+
+        /* 2Content authorsRow */
+#app .optionalBlock{
+    display:none;
+}
+#app .optionalBlock.active{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
 }
             /* 3Content authorsRow */
 #app .mainComp .reportBlock .authorsRow{
@@ -138,6 +189,9 @@
     color:var(--whiteColor);
     margin-top:30px;
 }
+#app .mainComp .themeTitle.unactive{
+    color:var(--grey);
+}
 
             /* 3Content footerAnnotation */
 #app .mainComp .footerAnnotation{
@@ -156,16 +210,31 @@
     display: flex;
     align-items: center;
 }
+
 #app .mainComp .footerAnnotation>div:nth-child(1){
+    color:var(--whiteColor);
+    background: var(--grey);
+}
+#app .mainComp .footerAnnotation>div.active:nth-child(1){
     color:var(--blue);
     background: #BFF158;
 }
+
 #app .mainComp .footerAnnotation>div:nth-child(2){
+    color:var(--grey);
+    border:1px solid var(--grey);
+}
+#app .mainComp .footerAnnotation>div.active:nth-child(2){
     color:var(--whiteColor);
     border:1px solid #BFF158;
 }
+
 #app .mainComp .footerAnnotation>div:nth-child(3){
-    color:var(--whiteColor);
     font-size: 17px;
+    color:var(--grey);
+    border:1px solid var(--grey)
+}
+#app .mainComp .footerAnnotation>div.active:nth-child(3){
+    color:var(--whiteColor);
     border:1px solid #BFF158;
 }

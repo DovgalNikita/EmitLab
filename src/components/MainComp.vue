@@ -7,7 +7,5 @@ import { fetchData } from '@/services/FetchData'
 <template>
     <main class="mainComp">
         <ReportBlock v-for="block in blocks" :key="block.id" :data="block"/>
-        <BreakTimeBlock />
-        <ReportBlock />
     </main>
 </template>
