@@ -15,8 +15,19 @@
     "event": "Применение ТРИЗ для решения задач с предельным уровнем неопределенности",
     "startEventTime": "10:30",
     "durationEvent": 40,
-    "speakers": "Светлана Дергачева/Constructor",
-    "speakerPhotos": "https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-fdd3-7534-b4a5-fa11b265061a",
+    "speakers": "Светлана Дергачева/Constructor; Максим Шаломович/Частное лицо; Евгений Асламов/Частное лицо",
+    "speakerPhotos": "https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-fdd3-7534-b4a5-fa11b265061a; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-f440-7dd4-8929-3b3ed83eea39; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-e9a5-7fb9-8585-269487bec701",
+    "typeEvent": "СЕКЦ. ДОКЛАД",
+    "language": "РУС",
+    "titleEvent": "МЕТОДОЛОГИИ"
+  },
+  {
+    "id": 3,
+    "event": "Темка в схемке предельным уровнем неопределенности",
+    "startEventTime": "11:10",
+    "durationEvent": 40,
+    "speakers": "Светлана Дергачева/Constructor; Максим Шаломович/Частное лицо; Евгений Асламов/Частное лицо",
+    "speakerPhotos": "https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-f440-7dd4-8929-3b3ed83eea39; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-f440-7dd4-8929-3b3ed83eea39; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-e9a5-7fb9-8585-269487bec701",
     "typeEvent": "СЕКЦ. ДОКЛАД",
     "language": "РУС",
     "titleEvent": "МЕТОДОЛОГИИ"

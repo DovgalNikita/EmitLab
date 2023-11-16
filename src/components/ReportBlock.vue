@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, defineProps } from 'vue'
-import { RangeTimeFunc, timeHandlerToMinute } from '../utils/timeHandler'
+import { RangeTimeFunc, timeHandlerToMinute, leftTimeEventHandler } from '../utils/timeHandler'
 import { store } from '@/store'
 
-const testBool = false
-
+const testBool = true
 const props = defineProps({
     data: {
         type: Object,
@@ -24,10 +23,10 @@ const props = defineProps({
 })
 
 store.commit('startEventTimeMutation', { startEventTime: timeHandlerToMinute(props.data.startEventTime) })
-console.log(store.state.startEventTime)
-const timeRange = computed(() => RangeTimeFunc(props.data.startEventTime, props.data.durationEvent))
-const isReport = ref(props.data.isReport)
+store.commit('durationEventTimeMutation', { durationEventTime: props.data.durationEvent })
 
+const timeRange = computed(() => RangeTimeFunc(props.data.startEventTime, props.data.durationEvent)) // for timeRange "14:00-15:00"
+const isReport = ref(props.data.isReport) // definer type of Block: breakTime or Event
 </script>
 
 <template>
@@ -41,7 +40,7 @@ const isReport = ref(props.data.isReport)
             <div class="content">
                 <div class="timeRow" :class="{active:!isReport}">
                     <div class="timeRange" :class="{unactive:testBool==false}">{{timeRange}}</div>
-                    <div class="timeLeft" v-if="isReport"><div v-if="testBool">осталось 16 мин</div></div>
+                    <div class="timeLeft" v-if="isReport"><div v-if="testBool">{{ leftTimeEventHandler() }}</div></div>
                     <div class="breakTimeTitle" :class="{active:testBool}" v-else>{{ data.event }}</div>
                 </div>
                 <div class="optionalBlock" :class="{active:isReport}">

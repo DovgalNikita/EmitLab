@@ -27,6 +27,9 @@ export const store = createStore({
         },
         startEventTimeMutation (state, payload) {
             state.startEventTime = payload.startEventTime
+        },
+        durationEventTimeMutation (state, payload) {
+            state.durationEventTime = payload.durationEventTime
         }
     }
 })

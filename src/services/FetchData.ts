@@ -3,5 +3,6 @@ import { dataHandler } from '../utils/dataHandler'
 
 export const fetchData = () => {
     const dataJSON = file
-    return dataHandler(dataJSON)
+    const handledData = dataHandler(dataJSON)
+    return handledData
 }
