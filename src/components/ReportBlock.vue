@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, defineProps } from 'vue'
-import { RangeTimeFunc } from '../utils/timeHandler'
+import { RangeTimeFunc, timeHandlerToMinute } from '../utils/timeHandler'
+import { store } from '@/store'
 
-const testBool = true
+const testBool = false
 
 const props = defineProps({
     data: {
@@ -22,6 +23,8 @@ const props = defineProps({
     }
 })
 
+store.commit('startEventTimeMutation', { startEventTime: timeHandlerToMinute(props.data.startEventTime) })
+console.log(store.state.startEventTime)
 const timeRange = computed(() => RangeTimeFunc(props.data.startEventTime, props.data.durationEvent))
 const isReport = ref(props.data.isReport)
 

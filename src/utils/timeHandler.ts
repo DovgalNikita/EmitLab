@@ -1,8 +1,12 @@
+import { store } from '@/store'
+
 export const updateFormattedDate = () => {
     const date = new Date()
     const day = date.toLocaleString('ru-RU', { weekday: 'short' })
     const time = date.toLocaleString('ru-RU', { hour: '2-digit', minute: '2-digit' })
-    return [day, time]
+    store.commit('currentDayMutation', { currentDay: day })
+    store.commit('currentTimeMutation', { currentTime: timeHandlerToMinute(time) })
+    return [store.state.currentDay, formaterTime(store.state.currentTime)]
 }
 
 export const timeHandlerToMinute = (time:string) => {
@@ -23,5 +27,5 @@ export const RangeTimeFunc = (startEventTime:string, durationEvent:number) => {
 }
 
 export const leftTimeHandler = () => {
-    console.log()
+    return store.state
 }

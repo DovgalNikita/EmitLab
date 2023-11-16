@@ -2,35 +2,26 @@
     setup
     lang="ts"
 >
-import { key } from '@/store'
+import { store } from '@/store'
 import { onMounted, onUnmounted, ref } from 'vue'
-import { useStore } from 'vuex'
-import { updateFormattedDate } from '@/utils/timeHandler'
+import { updateFormattedDate, formaterTime } from '@/utils/timeHandler'
 
-const store = useStore(key)
-
-const dayRef = ref(store.state.day)
-const timeRef = ref(store.state.time)
+const currentDay = ref('')
+const currentTime = ref('')
 
 onMounted(() => {
-    const [day, time] = updateFormattedDate()
+    [currentDay.value, currentTime.value] = updateFormattedDate()
     setInterval(() => {
-        const [day, time] = updateFormattedDate()
-        store.state.day = day
-        store.state.time = time
+        [currentDay.value, currentTime.value] = updateFormattedDate()
     }, 30000)
-})
-
-onUnmounted(() => {
-    clearInterval(updateFormattedDate)
 })
 </script>
 
 <template>
     <header>
-       <div class="contentBlock">
+    <div class="contentBlock">
             <div class="titleSection">секция а</div>
-            <div class="headerTime">{{ `${dayRef}, ${timeRef}` }}</div>
-       </div>
+            <div class="headerTime">{{ `${currentDay}, ${currentTime}` }}</div>
+    </div>
     </header>
 </template>

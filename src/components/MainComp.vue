@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { fetchData } from '@/services/FetchData'
 
-    const blocks = fetchData()
+const blocks = fetchData()
 </script>
 
 <template>
