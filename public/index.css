@@ -3,7 +3,7 @@
 @import url('./css/mainComp.css');
 @import url('./css/footer.css');
 @import url('./css/verticalLine.css');
-@import url('./css/breakTimeBlock.css');
+/* @import url('./css/breakTimeBlock.css'); */
 @import url('./css/reportBlock.css');
 
 :root{
@@ -14,24 +14,27 @@
     --green:#A6D447;
 }
 
+@keyframes appearing{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 /* assets */
 @font-face {
     font-family: 'Inter-Regular';
-    src: url('../src/assets/fonts/Inter-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
 }
 @font-face {
     font-family: 'Inter-Medium';
-    src: url('../src/assets/fonts/Inter-Medium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../assets/fonts/Inter-Medium.woff2') format('woff2');
 }
 @font-face {
     font-family: 'Inter-Bold';
-    src: local('Inter-Bold'), url('../src/assets/fonts/Inter-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: local('Inter-Bold'), url('../assets/fonts/Inter-Bold.woff2') format('woff2');
 }
 
 /* globalSettings */

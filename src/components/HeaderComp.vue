@@ -2,18 +2,19 @@
     setup
     lang="ts"
 >
-import { store } from '@/store'
 import { onMounted, onUnmounted, ref } from 'vue'
-import { updateFormattedDate, formaterTime } from '@/utils/timeHandler'
+import { updateFormattedDate } from '@/utils/timeHandler'
 
-const currentDay = ref('')
-const currentTime = ref('')
+updateFormattedDate()
+
+const currentDay = ref<string>('')
+const currentTime = ref<string>('')
 
 onMounted(() => {
     [currentDay.value, currentTime.value] = updateFormattedDate()
     setInterval(() => {
         [currentDay.value, currentTime.value] = updateFormattedDate()
-    }, 30000)
+    }, 1000)
 })
 </script>
 

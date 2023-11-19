@@ -1,3 +1,4 @@
+import IFetchData from '@/interfaces/IFetchData'
 import { createStore } from 'vuex'
 
 interface stateVuex{
@@ -5,7 +6,9 @@ interface stateVuex{
     durationEventTime: number,
     currentTime: number,
     currentDay: string,
-    pointerData: number
+    fetchindData: IFetchData[],
+    pointerData: number,
+    pointerRangeData:number
 }
 
 const initialState: stateVuex = {
@@ -13,7 +16,9 @@ const initialState: stateVuex = {
     durationEventTime: 0,
     currentTime: 0,
     currentDay: '',
-    pointerData: 0
+    fetchindData: [],
+    pointerData: 0,
+    pointerRangeData: 0
 }
 
 export const store = createStore({
@@ -30,6 +35,9 @@ export const store = createStore({
         },
         durationEventTimeMutation (state, payload) {
             state.durationEventTime = payload.durationEventTime
+        },
+        fetchindDataMutation (state, payload) {
+            state.fetchindData = payload.fetchindData
         }
     }
 })

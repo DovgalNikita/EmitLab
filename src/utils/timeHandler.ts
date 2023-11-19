@@ -42,8 +42,8 @@ export const leftTimeEventHandler = () => {
     const handledMins = mins < 10 ? '0' + mins : String(mins)
     if (timeLeftMinute >= 3600) {
         switch (timeLeftMinute) {
-            case 3600: return `остался ${hours} часа ${handledMins} минут`
-            default: return `осталось ${hours} часа ${handledMins} минут`
+        case 3600: return `остался ${hours} часа ${handledMins} минут`
+        default: return `осталось ${hours} часа ${handledMins} минут`
         }
     } else if (timeLeftMinute >= 0 && timeLeftMinute < 3600) {
         return `Осталось ${mins} минут`

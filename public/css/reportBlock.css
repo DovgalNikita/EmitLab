@@ -1,8 +1,27 @@
+/*animation */
+@keyframes swiper {
+    0%{
+        left:100%;
+        opacity:0;
+    }
+    20%{
+        left:0;
+        opacity:1;
+    }
+    80%{
+        left:0;
+    }
+    100%{
+        left:-100%;
+    }
+}
+
 /* 1ReportComp reportBlock*/
 #app .mainComp .reportBlock{
     position: relative;
     height:fit-content;
     margin:30px 0;
+    animation: appearing .5s;
 }
 #app .mainComp .reportBlock:nth-child(1){
     margin:0 0 30px;
@@ -18,7 +37,7 @@
 }
 #app .reportBlock .relation.breakTime{
     top:44px;
-    left:-47px;
+    left:-50px;
 }
 
 #app .reportBlock .relation .circle{
@@ -109,6 +128,7 @@
 }
 #app .mainComp .breakTime .timeRow{
     color:var(--grey);
+    font-family: 'Inter-Regular';
 }
 #app .mainComp .reportBlock .timeRow.active{
     margin-top:0;
@@ -118,6 +138,7 @@
 #app .timeRow .timeRange{
     color:var(--whiteColor);
     font-size: 60px;
+    font-family: 'Inter-Bold';
 }
 #app .timeRow .timeRange.unactive{
     color:var(--grey);
@@ -129,6 +150,7 @@
     width:fit-content;
     align-items: flex-start;
     font-size: 24px;
+    font-family: 'Inter-Regular';
 }
 #app .timeRow .breakTimeTitle{
     display: block;
@@ -150,18 +172,31 @@
     height:100%;
 }
             /* 3Content authorsRow */
-#app .mainComp .reportBlock .authorsRow{
+#app .mainComp .reportBlock .observerContent{
+    position: relative;
     display:flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height:140px;
     margin-top:4.6%;
+    overflow: hidden;
 }
+#app .mainComp .reportBlock .observerContent .authorsRow{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height:100%;
+    left:0;
+    animation: swiper 10s;
+}
+
 #app .mainComp .reportBlock .authorBlock{
     display:flex;
     align-items: center;
-    width:45%;
+    width:45%; 
 }
 #app .mainComp .authorsRow .imgAuthor{
     width:140px;
@@ -176,12 +211,20 @@
     height:100%;
 }
 
-#app .mainComp .authorsRow .authorData > div{
-    font-size:28px;
+#app .mainComp .authorsRow .authorData{
+    color:var(--grey);
+}
+#app .mainComp .authorsRow .authorData.active{
     color:var(--whiteColor);
 }
-#app .mainComp .authorsRow .authorData > div:nth-child(3){
+#app .mainComp .authorsRow .authorData .FIO > div{
+    font-size:28px;
+    font-family: 'Inter-Medium';
+}
+#app .mainComp .authorsRow .authorData .position{
     font-size:20px;
+    font-family: 'Inter-Regular';
+    margin-top:8px;
 }
 
             /* 3Content themeTitle */
@@ -189,6 +232,7 @@
     font-size: 48px;
     color:var(--whiteColor);
     margin-top:30px;
+    font-family: 'Inter-Bold';
 }
 #app .mainComp .themeTitle.unactive{
     color:var(--grey);
@@ -206,6 +250,7 @@
     padding:12px 20px;
     border-radius: 8px;
     font-size: 20px;
+    font-family: 'Inter-regular';
     text-transform: uppercase;
     width:fit-content;
     display: flex;

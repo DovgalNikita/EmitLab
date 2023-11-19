@@ -4,7 +4,7 @@ export default interface IFetchData{
     id: number
     event: string,
     startEventTime: string,
-    durationEvent: string,
+    durationEvent: number,
     speakersData?: ISpeakersData []
     speakers?: string,
     speakerPhotos?: string,
@@ -12,4 +12,5 @@ export default interface IFetchData{
     language: string,
     titleEvent: string,
     isReport?:boolean,
+    isActive?:boolean
 }

@@ -30,10 +30,10 @@ export const dataHandler = (data : IFetchData[]) => {
             }
             return ''
         })
+        item.isActive = false
         delete item.speakerPhotos
         delete item.speakers
         return ''
     })
-    console.log(data)
     return data
 }

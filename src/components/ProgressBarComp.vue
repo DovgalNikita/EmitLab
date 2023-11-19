@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, ref, computed, watch } from 'vue'
+import { store } from '@/store'
+import { progressBarHandler } from '@/utils/progressBarHandler'
 
 const props = defineProps({
     isReport: {
@@ -12,6 +14,6 @@ const props = defineProps({
 
 <template>
     <div class="progressBarBlock">
-        <progress value="70" max="100"></progress>
+        <progress :value="90" max="100"></progress>
     </div>
 </template>

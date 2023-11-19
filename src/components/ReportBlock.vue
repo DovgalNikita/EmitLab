@@ -1,57 +1,76 @@
 <script setup lang="ts">
-import { computed, ref, defineProps } from 'vue'
+import IFetchData from '@/interfaces/IFetchData'
+import { computed, ref, defineProps, watch } from 'vue'
 import { RangeTimeFunc, timeHandlerToMinute, leftTimeEventHandler } from '../utils/timeHandler'
 import { store } from '@/store'
 
-const testBool = true
 const props = defineProps({
     data: {
-        type: Object,
-        default: () => ({
-            id: '',
+        type: Object as () => IFetchData,
+        default: (): IFetchData => ({
+            id: null,
             event: '',
             startEventTime: '',
-            durationEvent: '',
-            speakers: '',
-            speakerPhotos: '',
+            durationEvent: 0,
+            speakersData: [],
             typeEvent: '',
             language: '',
             titleEvent: '',
-            isReport: ''
+            isReport: false,
+            isActive: false
         })
     }
 })
 
-store.commit('startEventTimeMutation', { startEventTime: timeHandlerToMinute(props.data.startEventTime) })
-store.commit('durationEventTimeMutation', { durationEventTime: props.data.durationEvent })
+const stateVuex = store.state // state
+const dataObject = ref(props.data) // data from props []
 
-const timeRange = computed(() => RangeTimeFunc(props.data.startEventTime, props.data.durationEvent)) // for timeRange "14:00-15:00"
+const currentTime = computed(() => stateVuex.currentTime)
+const isAciveReport = ref(props.data.isActive) // active report
+
+const startEvent = timeHandlerToMinute(dataObject.value.startEventTime)
+const endEvent = timeHandlerToMinute(dataObject.value.startEventTime) + dataObject.value.durationEvent
+
+const timeRange = computed(() => RangeTimeFunc(props.data.startEventTime, Number(props.data.durationEvent))) // for timeRange "14:00-15:00"
 const isReport = ref(props.data.isReport) // definer type of Block: breakTime or Event
+
+function currentReportTracker () {
+    if (startEvent <= currentTime.value && currentTime.value < endEvent) {
+        store.commit('startEventTimeMutation', { startEventTime: timeHandlerToMinute(props.data.startEventTime) })
+        store.commit('durationEventTimeMutation', { durationEventTime: props.data.durationEvent })
+        isAciveReport.value = true
+    } else {
+        isAciveReport.value = false
+    }
+}
+currentReportTracker()
+
+watch(currentTime, () => currentReportTracker())// tracker for activate current Event
 </script>
 
 <template>
     <div class="reportBlock" >
         <div class="relation" :class="{breakTime:isReport==false}">
-            <div class="circle" :class="{active:testBool==true}"></div>
-            <div class="line" :class="{active:testBool==true}"></div>
+            <div class="circle" :class="{active:isAciveReport==true}"></div>
+            <div class="line" :class="{active:isAciveReport==true}"></div>
         </div>
-        <div class="contentBlock" :class="[{breakTime:isReport==false},{active:testBool}]">
-            <ProgressBarComp :isReport="isReport.value" v-if="testBool==true&&isReport"/>
+        <div class="contentBlock" :class="[{breakTime:isReport==false},{active:isAciveReport}]">
+            <ProgressBarComp :isReport="isReport.valueOf" v-if="isAciveReport==true&&isReport"/>
             <div class="content">
                 <div class="timeRow" :class="{active:!isReport}">
-                    <div class="timeRange" :class="{unactive:testBool==false}">{{timeRange}}</div>
-                    <div class="timeLeft" v-if="isReport"><div v-if="testBool">{{ leftTimeEventHandler() }}</div></div>
-                    <div class="breakTimeTitle" :class="{active:testBool}" v-else>{{ data.event }}</div>
+                    <div class="timeRange" :class="{unactive:isAciveReport==false}">{{timeRange}}</div>
+                    <div class="timeLeft" v-if="isReport"><div v-if="isAciveReport">{{ leftTimeEventHandler() }}</div></div>
+                    <div class="breakTimeTitle" :class="{active:isAciveReport}" v-else>{{ data.event }}</div>
                 </div>
                 <div class="optionalBlock" :class="{active:isReport}">
-                    <AuthorsBlock />
+                    <AuthorsBlock :speakersData="data.speakersData" :isAciveReport="isAciveReport"/>
 
-                    <div class="themeTitle" :class="{unactive:testBool==false}">{{data.event}}</div>
+                    <div class="themeTitle" :class="{unactive:isAciveReport==false}">{{data.event}}</div>
 
                     <div class="footerAnnotation">
-                        <div :class="{active:testBool}">{{data.typeEvent}}</div>
-                        <div :class="{active:testBool}">{{data.language}}</div>
-                        <div :class="{active:testBool}">{{data.titleEvent}}</div>
+                        <div :class="{active:isAciveReport}">{{data.typeEvent}}</div>
+                        <div :class="{active:isAciveReport}">{{data.language}}</div>
+                        <div :class="{active:isAciveReport}">{{data.titleEvent}}</div>
                     </div>
                 </div>
             </div>
