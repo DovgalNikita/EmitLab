@@ -1,7 +1,4 @@
-import { store } from '@/store'
-
-export const progressBarHandler = () => {
-    const storeData = store.state
-    const progressValue = (storeData.currentTime - storeData.currentTime) / ((storeData.startEventTime + storeData.durationEventTime) - storeData.startEventTime) * 100
+export const progressBarHandler = (startEventTime, endEventTime, currentTime) => {
+    const progressValue = (currentTime - startEventTime) / (endEventTime - startEventTime) * 100
     return progressValue
 }

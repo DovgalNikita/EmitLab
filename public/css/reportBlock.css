@@ -94,28 +94,6 @@
     border:0;
 }
 
-        /* 2ProgressComp progressBarBlock*/
-#app .mainComp .progressBarBlock{
-    width:100%;
-    height:20px;
-}
-#app .mainComp .progressBarBlock progress{
-    width:100%;
-    height:100%;
-    border-radius: 150px;
-}
-#app .mainComp .progressBarBlock progress::-webkit-progress-bar{
-    background:#47525A;
-}
-#app .mainComp .progressBarBlock progress::-webkit-progress-value{
-    background: linear-gradient(270deg, #74D447 34.67%, #C6FF52 100%);
-}
-        /* 2Content */
-#app .mainComp .reportBlock .content{
-    width:93%;
-    height:100%;
-    
-}
             /* 3Content timeRow*/
 #app .mainComp .reportBlock .timeRow{
     display:flex;

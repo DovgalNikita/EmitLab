@@ -10,10 +10,22 @@ const props = defineProps({
     }
 })
 
+const stateVuex = ref(store.state)
+const currentTime = computed(() => stateVuex.value.currentTime)
+const startEventTime = ref(stateVuex.value.startEventTime)
+const durationEventTime = ref(stateVuex.value.durationEventTime)
+const endEvent = ref(startEventTime.value + durationEventTime.value)
+const progressValue = ref(0)
+
+progressValue.value = progressBarHandler(startEventTime.value, endEvent.value, currentTime.value)
+watch(currentTime, () => {
+    progressValue.value = progressBarHandler(startEventTime.value, endEvent.value, currentTime.value)
+})
+
 </script>
 
 <template>
     <div class="progressBarBlock">
-        <progress :value="90" max="100"></progress>
+        <progress :value="progressValue" max="100"></progress>
     </div>
 </template>
