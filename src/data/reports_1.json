@@ -156,8 +156,8 @@
   {
     "id": 15,
     "event": "Практические подходы к измерению KPI аналитиков в Agile-проектах",
-    "startEventTime": "16:15",
-    "durationEvent": 40,
+    "startEventTime": "16:10",
+    "durationEvent": 1,
     "speakers": "Наталья Семенова/НОТА",
     "speakerPhotos": "https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-f89c-7a7b-85b4-e32bf52b873a",
     "typeEvent": "СЕКЦ. ДОКЛАД",
@@ -167,8 +167,8 @@
   {
     "id": 16,
     "event": "Перерыв",
-    "startEventTime": "16:55",
-    "durationEvent": 15,
+    "startEventTime": "16:15",
+    "durationEvent": 1,
     "speakers": "-",
     "speakerPhotos": "-",
     "typeEvent": "-",
@@ -177,24 +177,24 @@
   },
   {
     "id": 17,
-    "event": "Закрытие конференции. зал A",
-    "startEventTime": "17:10",
-    "durationEvent": 30,
-    "speakers": "-",
-    "speakerPhotos": "-",
-    "typeEvent": "-",
-    "language": "-",
-    "titleEvent": "-"
-  },
-  {
-    "id": 18,
     "event": "Применение ТРИЗ для решения задач с предельным уровнем неопределенности",
-    "startEventTime": "10:30",
-    "durationEvent": 40,
+    "startEventTime": "16:16",
+    "durationEvent": 2,
     "speakers": "Светлана Дергачева/Constructor; Максим Шаломович/Частное лицо; Евгений Асламов/Частное лицо",
     "speakerPhotos": "https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-fdd3-7534-b4a5-fa11b265061a; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-f440-7dd4-8929-3b3ed83eea39; https://api.narstom.dev.antonyms.agency/admin/attachment/download/018b6863-e9a5-7fb9-8585-269487bec701",
     "typeEvent": "СЕКЦ. ДОКЛАД",
     "language": "РУС",
     "titleEvent": "МЕТОДОЛОГИИ"
+  },
+  {
+    "id": 18,
+    "event": "Закрытие конференции. зал A",
+    "startEventTime": "16:18",
+    "durationEvent": 1,
+    "speakers": "-",
+    "speakerPhotos": "-",
+    "typeEvent": "-",
+    "language": "-",
+    "titleEvent": "-"
   }
 ]

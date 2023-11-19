@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import { updateFetchindData } from '@/services/FetchData'
 import { store } from '@/store/index'
+import { timeHandlerToMinute } from '@/utils/timeHandler'
 
 setInterval(() => {
     updateFetchindData()
@@ -9,19 +10,32 @@ setInterval(() => {
 
 const stateVuex = ref(store.state)
 const dataContentBlocks = ref(stateVuex.value.fetchindData || [])
-const dataContentBlocksHandled = ref(dataContentBlocks.value !== undefined ? JSON.parse(JSON.stringify(dataContentBlocks.value)) : null) // data pf speakers to JSON
+const dataContentBlocksHandled = computed(() => dataContentBlocks.value !== undefined ? JSON.parse(JSON.stringify(dataContentBlocks.value)) : null) // data pf speakers to JSON
 
-console.log(dataContentBlocksHandled.value)
-// watch(currentTime, () => { // tracker for activate current Event
-//     if (startEvent <= currentTime.value && currentTime.value < endEvent) {
-//         isAciveReport.value = true
-//     } else {
-//         isAciveReport.value = false
-//     }
-// })
-
+const currentTime = computed(() => store.state.currentTime)
+const counter = ref(0)
 const pointerData = ref(stateVuex.value.pointerData)
-pointerData.value = 14
+
+function pointerReportBlockTracker () {
+    counter.value = 0
+    dataContentBlocksHandled.value.map((item) => {
+        const startEvent = timeHandlerToMinute(item.startEventTime)
+        const durationEvent = item.durationEvent
+        console.log(item)
+        if (startEvent <= currentTime.value && currentTime.value < (startEvent + durationEvent)) {
+            store.commit('pointerDataMutation', { pointerData: counter.value })
+        }
+        counter.value++
+        return ''
+    })
+    pointerData.value = stateVuex.value.pointerData
+}
+
+pointerReportBlockTracker()
+
+watch([currentTime, pointerData], () => { // tracker for activate current Event
+    pointerReportBlockTracker()
+})
 
 </script>
 

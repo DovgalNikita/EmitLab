@@ -6,6 +6,7 @@
 @import url('./css/progressBarComp.css');
 /* @import url('./css/breakTimeBlock.css'); */
 @import url('./css/reportBlock.css');
+@import url('./css/authorsBlock.css');
 
 :root{
     --whiteColor:#FFF;

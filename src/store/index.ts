@@ -38,6 +38,9 @@ export const store = createStore({
         },
         fetchindDataMutation (state, payload) {
             state.fetchindData = payload.fetchindData
+        },
+        pointerDataMutation (state, payload) {
+            state.pointerData = payload.pointerData
         }
     }
 })

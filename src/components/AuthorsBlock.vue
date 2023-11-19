@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, computed } from 'vue'
 
 const props = defineProps({
     speakersData: {
@@ -11,7 +11,7 @@ const props = defineProps({
 })
 
 const data = ref(props.speakersData || []) // data of speakers
-const isAciveReport = ref(props.isAciveReport)
+const isAciveReport = computed(() => props.isAciveReport)
 const pointer = ref(0)
 const dataHandled = ref(data.value !== undefined ? JSON.parse(JSON.stringify(data.value)) : null) // data pf speakers to JSON
 const isSwiped = ref(true)

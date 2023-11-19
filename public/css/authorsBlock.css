@@ -1,0 +1,66 @@
+ /* 2Content authorsRow */
+ #app .optionalBlock{
+    display:none;
+}
+#app .optionalBlock.active{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+}
+            /* 3Content authorsRow */
+#app .mainComp .reportBlock .observerContent{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height:140px;
+    margin-top:4.6%;
+    overflow: hidden;
+}
+#app .mainComp .reportBlock .observerContent .authorsRow{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height:100%;
+    left:0;
+    /* animation: swiper 10s; */
+}
+
+#app .mainComp .reportBlock .authorBlock{
+    display:flex;
+    align-items: center;
+    width:45%; 
+    animation: appearing 2s;
+}
+#app .mainComp .authorsRow .imgAuthor{
+    width:140px;
+    height:140px;
+    background-color: green;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right:2.4%; 
+}
+#app .mainComp .authorsRow .imgAuthor>img{
+    width:100%;
+    height:100%;
+}
+
+#app .mainComp .authorsRow .authorData{
+    color:var(--grey);
+}
+#app .mainComp .authorsRow .authorData.active{
+    color:var(--whiteColor);
+}
+#app .mainComp .authorsRow .authorData .FIO > div{
+    font-size:28px;
+    font-family: 'Inter-Medium';
+}
+#app .mainComp .authorsRow .authorData .position{
+    font-size:20px;
+    font-family: 'Inter-Regular';
+    margin-top:8px;
+}
